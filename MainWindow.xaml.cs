@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,22 @@ namespace Todo
     /// </summary>
     public partial class MainWindow : Window
     {
+        const string filename = "C:\\Users\\joela\\OneDrive\\To do\\To do daily.txt";
         public MainWindow()
         {
             InitializeComponent();
+            LoadList();
+        }
+
+        private void LoadList()
+        {
+            ListText.Text = File.ReadAllText(filename);
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
 
-            // Begin dragging the window
             this.DragMove();
         }
 
@@ -46,6 +53,11 @@ namespace Todo
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             CloseButton.Visibility = Visibility.Hidden;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            File.WriteAllText(filename, ListText.Text);
         }
     }
 }
