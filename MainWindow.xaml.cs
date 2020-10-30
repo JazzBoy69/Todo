@@ -53,9 +53,15 @@ namespace Todo
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             CloseButton.Visibility = Visibility.Hidden;
+            Save();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Save();
+        }
+
+        private void Save()
         {
             File.WriteAllText(filename, ListText.Text);
         }
