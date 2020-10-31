@@ -45,15 +45,21 @@ namespace Todo
             this.Close();
         }
 
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
             CloseButton.Visibility = Visibility.Visible;
+            SaveButton.Visibility = Visibility.Visible;
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             CloseButton.Visibility = Visibility.Hidden;
-            Save();
+            SaveButton.Visibility = Visibility.Hidden;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -64,6 +70,10 @@ namespace Todo
         private void Save()
         {
             File.WriteAllText(filename, ListText.Text);
+        }
+
+        private void ListText_TextChanged(object sender, TextChangedEventArgs e)
+        {
         }
     }
 }

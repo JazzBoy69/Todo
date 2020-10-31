@@ -15,10 +15,8 @@
         <SolidColorBrush  Opacity="0.5" Color="White"/>
     </Window.Background>
     <Grid>
-
-
-        <TextBox x:Name="ListText" HorizontalAlignment="Center" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="261" Height="414" AcceptsReturn="True" Background="#99FFFFFF" FontSize="16" Padding="5,5,5,5"/>
+        <TextBox x:Name="ListText" HorizontalAlignment="Center" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="261" Height="414" AcceptsReturn="True" Background="#99FFFFFF" FontSize="16" Padding="5,5,5,5" TextChanged="ListText_TextChanged"/>
         <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="235,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.139,-0.156" Height="18" Width="36" FontSize="8" Click="Button_Click" Background="#7FDDDDDD" Visibility="Hidden"/>
-
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="185,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.139,-0.156" Height="18" Width="36" FontSize="8" Click="Save_Click" Background="#7FDDDDDD" Visibility="Hidden"/>
     </Grid>
 </Window>
