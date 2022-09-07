@@ -21,12 +21,18 @@ namespace Todo
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string filename = "C:\\Users\\joela\\OneDrive\\To do\\To do daily.txt";
+        const string filename = "C:\\Users\\joela\\Dropbox\\To do\\To do daily.txt";
+        bool loaded = false;
         public MainWindow()
         {
             InitializeComponent();
             LoadList();
-        }
+            loaded = true;
+
+			var desktopWorkingArea = System.Windows.SystemParameters.WorkArea;
+			Left = desktopWorkingArea.Right - Width;
+			Top = desktopWorkingArea.Bottom - Height;
+		}
 
         private void LoadList()
         {
@@ -74,6 +80,7 @@ namespace Todo
 
         private void ListText_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (loaded) Save();
         }
     }
 }

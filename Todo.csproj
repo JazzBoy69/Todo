@@ -4,6 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icons8-Windows-8-User-Interface-Checked-Checkbox.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Icons8-Windows-8-User-Interface-Checked-Checkbox.ico" />
+  </ItemGroup>
 
 </Project>
